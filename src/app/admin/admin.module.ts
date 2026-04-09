@@ -14,12 +14,11 @@ import { PoliciesComponent } from './policies/policies.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { CommissionComponent } from './commission/commission.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-// 
  
 @NgModule({
   declarations: [
-AnalyticsComponent,
-      SellersComponent,
+    AnalyticsComponent,
+    SellersComponent,
     OrdersComponent,
     DisputesComponent,
     ReturnsComponent,
