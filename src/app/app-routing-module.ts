@@ -2,8 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { LogisticsGuard } from './guards/logistics.gaurd';
+import { LandingAuthModule } from './Landing-Auth/landing-auth.module';
  
 const routes: Routes = [
+  {
+    path: 'landingpage',
+    loadChildren: () => import('./Landing-Auth/landing-auth.module').then(m => m.LandingAuthModule)
+  },
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
@@ -16,8 +21,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'admin',
+    redirectTo: 'landingpage',
     pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'landingpage'
   }
 ];
  

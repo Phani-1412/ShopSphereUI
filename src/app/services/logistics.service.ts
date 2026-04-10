@@ -11,7 +11,7 @@ export class LogisticsService {
  
   constructor(private http: HttpClient) { }
  
-  // GET — needs a new endpoint in your backend (see note below)
+  // GET /api/shipment/all
   getAllShipments(): Observable<any[]> {
     return this.http.get<any[]>(`${this.api}/api/shipment/all`);
   }
